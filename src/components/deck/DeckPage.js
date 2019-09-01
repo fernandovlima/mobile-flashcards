@@ -16,8 +16,8 @@ import {
   darkGray,
   gray,
   deckDetailsColor
-} from '../../utils/helpers';
-import { removeDeckEntry } from '../../utils/api';
+} from '../../util/helpers';
+import { removeDeckEntry } from '../../util/api';
 import { removeDeck } from '../../actions';
 
 class DeckPage extends Component {

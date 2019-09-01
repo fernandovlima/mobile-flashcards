@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 //Helpers
-import { darkGray, gray } from '../../utils/helpers';
+import { darkGray, gray } from '../../util/helpers';
 
 const Deck = ({ id, deck, navigation }) => {
   const goToDeckPage = () => {

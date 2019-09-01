@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { View, StyleSheet } from 'react-native';
-import { SubmitBtn } from '../../shared/SubmitBtn';
+import { ButtonDefault } from '../utils/ButtonDefault';
 import { Result, ResultTxt, ScoreTxt } from './CardStyles';
 
 const CardResult = ({ total, corrects, restart, goBack }) => {
@@ -25,17 +25,21 @@ const CardResult = ({ total, corrects, restart, goBack }) => {
         </ScoreTxt>
       </View>
       <View style={styles.blcButtoms}>
-        <SubmitBtn onPress={restart} style={styles.btnPlayAgain} textSize={18}>
+        <ButtonDefault
+          onPress={restart}
+          style={styles.btnPlayAgain}
+          textSize={18}
+        >
           Play Again!
-        </SubmitBtn>
-        <SubmitBtn
+        </ButtonDefault>
+        <ButtonDefault
           onPress={goBack}
           style={styles.btnGoHome}
           textColor={'#999'}
           textSize={12}
         >
           Back to Deck Page
-        </SubmitBtn>
+        </ButtonDefault>
       </View>
     </Result>
   );

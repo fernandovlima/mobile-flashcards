@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo';
 import styled from 'styled-components/native';
-import { submitDeckEntry } from '../../utils/api';
-import { getBackgroundColor, red, deckColor } from '../../utils/helpers';
+import { submitDeckEntry } from '../../util/api';
+import { getBackgroundColor, red, deckColor } from '../../util/helpers';
 import { ButtonDefault } from '../utils/ButtonDefault';
 import { addDeck } from '../../actions';
 

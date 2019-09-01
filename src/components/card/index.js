@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 import FlipCard from 'react-native-flip-card';
 import { LinearGradient } from 'expo';
 import { Text, StyleSheet, Alert } from 'react-native';
-import { getBackgroundColor, quizColor } from '../../utils/helpers';
+import { getBackgroundColor, quizColor } from '../../util/helpers';
 import ProgressBar from './ProgressBar';
 import BackCard from './CardBack';
 import FaceCard from './CardFace';
@@ -134,16 +134,6 @@ class CardPage extends Component {
 }
 
 export default CardPage;
-
-/**
- * PropTypes
- */
-CardPage.propTypes = {
-  navigation: PropTypes.shape({
-    navigate: PropTypes.func,
-    state: PropTypes.object
-  }).isRequired
-};
 
 /**
  * Stylesheet
