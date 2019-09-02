@@ -1,9 +1,9 @@
 import { StackNavigator } from 'react-navigation';
 //Components
-import DecksList from '../components/deck';
+import DecksList from '../components/deck/';
 import NewDeck from '../components/deck/NewDeck';
 import DeckPage from '../components/deck/DeckPage';
-import CardPage from '../components/card';
+import CardPage from '../components/card/';
 import NewCard from '../components/card/NewCard';
 
 function optionsNavHeader(title) {
@@ -11,7 +11,7 @@ function optionsNavHeader(title) {
     title,
     headerTintColor: '#fff',
     headerStyle: {
-      backgroundColor: '#333'
+      backgroundColor: '#4356a3'
     }
   };
 }
