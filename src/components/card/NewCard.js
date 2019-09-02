@@ -79,7 +79,7 @@ export function NewCard() {
 }
 
 //components
-const Input = styled.Input`
+const Input = styled.TextInput`
   font-size: 18px;
   color: #fff;
   padding: 5px 10px;
@@ -93,7 +93,7 @@ const ContainerInput = styled.View`
 
 const styles = StyleSheet.create({
   container: {
-    lex: 1,
+    flex: 1,
     justifyContent: 'space-between',
     alignItems: 'center'
   },
