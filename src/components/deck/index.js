@@ -44,7 +44,7 @@ class DecksList extends Component {
       >
         <TouchableOpacity
           style={styles.btnAddNewDeck}
-          onPress={() => navigation.navigate('DeckNew')}
+          onPress={() => navigation.navigate('NewDeck')}
         >
           <Feather name='plus-square' size={20} color={'#f1f1f1'} />
           <Text style={styles.txtAddNewDeck}>New Deck</Text>

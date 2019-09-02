@@ -58,7 +58,7 @@ class DeckPage extends Component {
 
   addNewCard = () => {
     const { deck, navigation } = this.props;
-    navigation.navigate('CardNew', { deckId: deck.id });
+    navigation.navigate('NewCard', { deckId: deck.id });
   };
 
   render() {

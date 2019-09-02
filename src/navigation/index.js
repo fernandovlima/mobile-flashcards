@@ -16,7 +16,7 @@ function optionsNavHeader(title) {
   };
 }
 
-const Stack = StackNavigator({
+const StackNav = StackNavigator({
   Home: {
     screen: DecksList,
     navigationOptions: {
@@ -27,7 +27,7 @@ const Stack = StackNavigator({
     screen: DeckPage,
     navigationOptions: optionsNavHeader('Deck Details')
   },
-  DeckNew: {
+  NewDeck: {
     screen: NewDeck,
     navigationOptions: optionsNavHeader('New Deck')
   },
@@ -35,10 +35,10 @@ const Stack = StackNavigator({
     screen: CardPage,
     navigationOptions: optionsNavHeader('Quiz')
   },
-  CardNew: {
+  NewCard: {
     screen: NewCard,
     navigationOptions: optionsNavHeader('New Card')
   }
 });
 
-export default Stack;
+export default StackNav;
