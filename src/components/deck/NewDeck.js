@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
-import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import {
   View,
@@ -8,7 +8,7 @@ import {
   KeyboardAvoidingView,
   Keyboard
 } from 'react-native';
-import { LinearGradient } from 'expo';
+
 import styled from 'styled-components/native';
 import { submitDeckEntry } from '../../util/api';
 import { getBackgroundColor, red, deckColor } from '../../util/helpers';
@@ -79,10 +79,7 @@ class NewDeck extends PureComponent {
   render() {
     return (
       <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-        <LinearGradient
-          colors={getBackgroundColor(deckColor)}
-          style={{ flex: 1 }}
-        >
+        <Container style={{ flex: 1 }}>
           <KeyboardAvoidingView
             behavior='padding'
             style={styles.container}
@@ -105,7 +102,7 @@ class NewDeck extends PureComponent {
               </ButtonDefault>
             </View>
           </KeyboardAvoidingView>
-        </LinearGradient>
+        </Container>
       </TouchableWithoutFeedback>
     );
   }
@@ -122,6 +119,9 @@ export default connect(mapStateToProps)(NewDeck);
 /**
  * Styled Components
  */
+const Container = styled.View`
+  background-color: #43b2a1;
+`;
 
 const Question = styled.Text`
   justify-content: center;

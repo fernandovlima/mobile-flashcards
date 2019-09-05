@@ -3,20 +3,14 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components/native';
 import { Text, Alert } from 'react-native';
-import { LinearGradient } from 'expo';
+
 import {
   MaterialCommunityIcons,
   AntDesign,
   Foundation
 } from '@expo/vector-icons';
 //Helpers
-import {
-  getBackgroundColor,
-  red,
-  darkGray,
-  gray,
-  deckDetailsColor
-} from '../../util/helpers';
+import { red, darkGray, gray } from '../../util/helpers';
 import { removeDeckEntry } from '../../util/api';
 import { removeDeck } from '../../actions';
 
@@ -65,10 +59,7 @@ class DeckPage extends Component {
     const { deck } = this.props;
     const { title, numOfCards } = deck;
     return (
-      <LinearGradient
-        colors={getBackgroundColor(deckDetailsColor)}
-        style={{ flex: 1 }}
-      >
+      <Container style={{ flex: 1 }}>
         <BlcTitle>
           <Title>{title}</Title>
           <DetailsContent>
@@ -98,7 +89,7 @@ class DeckPage extends Component {
             <TextDelete>Delete Deck</TextDelete>
           </BtnRemoveDeck>
         </BlcButtoms>
-      </LinearGradient>
+      </Container>
     );
   }
 }
@@ -125,6 +116,9 @@ export default connect(
 /**
  * Styled Components
  */
+const Container = styled.View`
+  background-color: #43b2a1;
+`;
 
 const BlcTitle = styled.View`
   flex: 2;

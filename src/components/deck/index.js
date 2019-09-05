@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import { LinearGradient, AppLoading } from 'expo';
+import { AppLoading } from 'expo';
 import { Feather } from '@expo/vector-icons';
+import styled from 'styled-components/native';
 import {
   Text,
   TouchableOpacity,
@@ -42,11 +43,11 @@ class DecksList extends Component {
       return <AppLoading />;
     }
     return (
-      <LinearGradient
+      <Container
         style={{ flex: 1 }}
-        colors={getBackgroundColor(deckColor)}
-        startPoint={[0, 0]}
-        endPoint={[0, 1]}
+        //colors={getBackgroundColor(deckColor)}
+        // startPoint={[0, 0]}
+        // endPoint={[0, 1]}
       >
         <TouchableOpacity
           style={styles.btnAddNewDeck}
@@ -60,7 +61,7 @@ class DecksList extends Component {
           renderItem={this.renderItem}
           keyExtractor={item => item.id}
         />
-      </LinearGradient>
+      </Container>
     );
   }
 }
@@ -74,6 +75,9 @@ export default connect(mapStateToProps)(DecksList);
 /**
  * Styled Components
  */
+const Container = styled.View`
+  background-color: #43b2a1;
+`;
 
 const styles = StyleSheet.create({
   btnAddNewDeck: {

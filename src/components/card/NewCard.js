@@ -7,7 +7,7 @@ import {
   KeyboardAvoidingView
 } from 'react-native';
 import styled from 'styled-components/native';
-import { LinearGradient } from 'expo';
+import { getBackgroundColor, cardColor } from '../../util/helpers';
 import ButtonDefault from '../utils/ButtonDefault';
 
 export default function NewCard() {
@@ -46,10 +46,7 @@ export default function NewCard() {
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <LinearGradient
-        colors={getBackgroundColor(cardColor)}
-        style={{ flex: 1 }}
-      >
+      <Container colors={getBackgroundColor(cardColor)} style={{ flex: 1 }}>
         <KeyboardAvoidingView behavior='padding' style={styles.container}>
           <View style={styles.form}>
             <ContainerInput>
@@ -73,12 +70,16 @@ export default function NewCard() {
             </ButtonDefault>
           </View>
         </KeyboardAvoidingView>
-      </LinearGradient>
+      </Container>
     </TouchableWithoutFeedback>
   );
 }
 
 //components
+const Container = styled.View`
+  background-color: #43b2a1;
+`;
+
 const Input = styled.TextInput`
   font-size: 18px;
   color: #fff;

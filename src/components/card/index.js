@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import styled from 'styled-components/native';
 import FlipCard from 'react-native-flip-card';
-import { LinearGradient } from 'expo';
+
 import { Text, StyleSheet, Alert } from 'react-native';
 import { getBackgroundColor, quizColor } from '../../util/helpers';
 import ProgressBar from './ProgressBar';
@@ -84,10 +84,7 @@ class CardPage extends Component {
     const { question, answer } = questions[currentQuestion - 1];
 
     return (
-      <LinearGradient
-        colors={getBackgroundColor(quizColor)}
-        style={styles.container}
-      >
+      <Container style={styles.container}>
         <ContainerTitle>
           <Title>{name}</Title>
         </ContainerTitle>
@@ -128,7 +125,7 @@ class CardPage extends Component {
             </BtnSair>
           )}
         </Footer>
-      </LinearGradient>
+      </Container>
     );
   }
 }
@@ -149,6 +146,9 @@ const styles = StyleSheet.create({
 /**
  * Styled Components
  */
+const Container = styled.View`
+  background-color: #43b2a1;
+`;
 
 const ContainerTitle = styled.View`
   flex: 1;
