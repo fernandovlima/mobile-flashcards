@@ -1,4 +1,4 @@
-import { StackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 //Components
 import DecksList from '../components/deck/';
 import NewDeck from '../components/deck/NewDeck';
@@ -16,7 +16,7 @@ function optionsNavHeader(title) {
   };
 }
 
-const StackNav = StackNavigator({
+const StackNav = createStackNavigator({
   Home: {
     screen: DecksList,
     navigationOptions: {
