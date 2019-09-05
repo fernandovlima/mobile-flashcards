@@ -10,7 +10,7 @@ import styled from 'styled-components/native';
 import { LinearGradient } from 'expo';
 import ButtonDefault from '../utils/ButtonDefault';
 
-export function NewCard() {
+export default function NewCard() {
   state = {
     card: {
       question: '',

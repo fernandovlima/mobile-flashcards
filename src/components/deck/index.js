@@ -3,7 +3,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { LinearGradient, AppLoading } from 'expo';
 import { Feather } from '@expo/vector-icons';
-import { Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
+import {
+  Text,
+  TouchableOpacity,
+  FlatList,
+  StyleSheet,
+  View
+} from 'react-native';
 import { fetchDeckResults } from '../../util/api';
 import { getBackgroundColor, deckColor } from '../../util/helpers';
 import { receiveDecks } from '../../actions';
@@ -39,8 +45,8 @@ class DecksList extends Component {
       <LinearGradient
         style={{ flex: 1 }}
         colors={getBackgroundColor(deckColor)}
-        start={[0, 0]}
-        end={[0, 1]}
+        startPoint={[0, 0]}
+        endPoint={[0, 1]}
       >
         <TouchableOpacity
           style={styles.btnAddNewDeck}

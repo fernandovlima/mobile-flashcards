@@ -1,9 +1,10 @@
+import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 //Components
-import DecksList from '../components/deck/';
+import DecksList from '../components/deck/index';
 import NewDeck from '../components/deck/NewDeck';
 import DeckPage from '../components/deck/DeckPage';
-import CardPage from '../components/card/';
+import CardPage from '../components/card/index';
 import NewCard from '../components/card/NewCard';
 
 function optionsNavHeader(title) {
@@ -40,5 +41,5 @@ const StackNav = createStackNavigator({
     navigationOptions: optionsNavHeader('New Card')
   }
 });
-
-export default StackNav;
+const AppContainer = createAppContainer(StackNav);
+export default AppContainer;

@@ -4,7 +4,7 @@ import { Constants } from 'expo';
 
 const FlashCardStatusBar = ({ backgroundColor, ...props }) => {
   return (
-    <View style={{ backgroundColor, height: Constants.statusBarHeight }}>
+    <View style={{ backgroundColor, height: 50 }}>
       <StatusBar translucent backgroundColor={backgroundColor} {...props} />
     </View>
   );
