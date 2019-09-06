@@ -63,7 +63,7 @@ class DeckPage extends Component {
         <BlcTitle>
           <Title>{title}</Title>
           <DetailsContent>
-            <MaterialCommunityIcons name='cards' size={20} color={gray} />
+            <MaterialCommunityIcons name='cards' size={20} color='#42a' />
             <Details>
               {numOfCards} {numOfCards > 1 ? 'cards' : 'card'}
             </Details>
@@ -81,7 +81,7 @@ class DeckPage extends Component {
         )}
         <BlcButtoms>
           <BtnAddCard onPress={this.addNewCard}>
-            <Foundation name='page-add' size={30} color={'#464646'} />
+            <Foundation name='page-add' size={30} color={'#42a'} />
             <TextAdd>Add Card</TextAdd>
           </BtnAddCard>
           <BtnRemoveDeck onPress={this.handleDeleteClick}>
@@ -148,7 +148,7 @@ const DetailsContent = styled.View`
 const Details = styled(Texts)`
   font-size: 18px;
   margin-left: 10px;
-  color: ${gray};
+  color: #42a;
 `;
 
 const BtnStartQuiz = styled.TouchableOpacity`
@@ -168,7 +168,7 @@ const BtnAddCard = styled.TouchableOpacity`
 
 const TextAdd = styled.Text`
   font-size: 10;
-  color: #464646;
+  color: #42a;
 `;
 
 const TextDelete = styled(TextAdd)`

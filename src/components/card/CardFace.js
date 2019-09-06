@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   btnViewAnswer: {
-    backgroundColor: '#464646',
+    backgroundColor: '#4aa',
     borderRadius: 5,
     padding: 10,
     width: 150

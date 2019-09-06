@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
   View,
   StyleSheet,
@@ -7,10 +8,12 @@ import {
   KeyboardAvoidingView
 } from 'react-native';
 import styled from 'styled-components/native';
+import { submitCardEntry } from '../../util/api';
 import { getBackgroundColor, cardColor } from '../../util/helpers';
-import ButtonDefault from '../utils/ButtonDefault';
+import { addCard } from '../../actions';
+import { ButtonDefault } from '../utils/ButtonDefault';
 
-export default function NewCard() {
+class NewCard extends Component {
   state = {
     card: {
       question: '',
@@ -43,37 +46,48 @@ export default function NewCard() {
       }
     }));
   };
-
-  return (
-    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <Container colors={getBackgroundColor(cardColor)} style={{ flex: 1 }}>
-        <KeyboardAvoidingView behavior='padding' style={styles.container}>
-          <View style={styles.form}>
-            <ContainerInput>
-              <Input
-                value={card.question}
-                onChangeText={e => this.handleInputChange(e, 'question')}
-                placeholder={'What question would you like to ask?'}
-              />
-            </ContainerInput>
-            <ContainerInput style={{ marginTop: 20 }}>
-              <Input
-                value={card.answer}
-                onChangeText={e => this.handleInputChange(e, 'answer')}
-                placeholder={'And the answer is...'}
-              />
-            </ContainerInput>
-          </View>
-          <View style={{ flex: 1 }}>
-            <ButtonDefault style={styles.buttonSubmit} onPress={this.submit}>
-              Add Card
-            </ButtonDefault>
-          </View>
-        </KeyboardAvoidingView>
-      </Container>
-    </TouchableWithoutFeedback>
-  );
+  render() {
+    const { card } = this.state;
+    return (
+      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+        <Container colors={getBackgroundColor(cardColor)} style={{ flex: 1 }}>
+          <KeyboardAvoidingView behavior='padding' style={styles.container}>
+            <View style={styles.form}>
+              <ContainerInput>
+                <Input
+                  value={card.question}
+                  onChangeText={e => this.handleInputChange(e, 'question')}
+                  placeholder={'What question would you like to ask?'}
+                />
+              </ContainerInput>
+              <ContainerInput style={{ marginTop: 20 }}>
+                <Input
+                  value={card.answer}
+                  onChangeText={e => this.handleInputChange(e, 'answer')}
+                  placeholder={'And the answer is...'}
+                />
+              </ContainerInput>
+            </View>
+            <View style={{ flex: 1 }}>
+              <ButtonDefault style={styles.buttonSubmit} onPress={this.submit}>
+                Add Card
+              </ButtonDefault>
+            </View>
+          </KeyboardAvoidingView>
+        </Container>
+      </TouchableWithoutFeedback>
+    );
+  }
 }
+
+function mapStateToProps(store, { navigation }) {
+  const { deckId } = navigation.state.params;
+  return {
+    deckId
+  };
+}
+
+export default connect(mapStateToProps)(NewCard);
 
 //components
 const Container = styled.View`
@@ -88,7 +102,7 @@ const Input = styled.TextInput`
 `;
 
 const ContainerInput = styled.View`
-  border-bottom-color: #aaa;
+  border-bottom-color: #fff;
   border-bottom-width: 1px;
 `;
 
@@ -110,6 +124,6 @@ const styles = StyleSheet.create({
     marginTop: 15,
     padding: 10,
     borderRadius: 5,
-    backgroundColor: 'rgba(200, 200, 200, 0.8)'
+    backgroundColor: 'rgba(100, 100, 200, 0.8)'
   }
 });

@@ -5,11 +5,11 @@ export const Face = styled.View`
   justify-content: space-between;
   color: #444;
   border-radius: 5px;
-  background: #ccc;
+  background: #42f;
 `;
 
 export const Back = styled(Face)`
-  background-color: #444;
+  background-color: #42d;
   color: #ccc;
 `;
 

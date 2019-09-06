@@ -20,7 +20,7 @@ const CardBack = ({ handleAnswer, card }) => {
       <View style={styles.btnContent}>
         <ButtonDefault
           onPress={handleCorrectAnswer}
-          textColor={'#444'}
+          textColor={'#42a'}
           style={styles.btnCorrect}
         >
           Correct
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   btnCorrect: {
-    backgroundColor: '#fff',
+    backgroundColor: '#4a2',
     padding: 10,
     width: 150,
     borderRadius: 5
